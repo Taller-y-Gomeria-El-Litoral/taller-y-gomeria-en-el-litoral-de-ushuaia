@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Meta etiquetas SEO -->
-    <meta name="description" content="Taller y Gomería El Litoral en Ushuaia. Mecánica, gomería, lavado, arenado y protección Protex. Presupuesto sin cargo y atención profesional.">
-    <meta name="keywords" content="Taller mecánico Ushuaia, Gomería Ushuaia, Lavado de autos Ushuaia, Cambio de neumáticos, Alineación, Arenado de chasis, Protex, Presupuesto sin cargo">
+    <meta name="description" content="Taller y Gomería El Litoral en Ushuaia. Mecánica integral, gomería, lavado de chasis, arenado y protección Protex. Presupuesto sin cargo en 24 de marzo 227.">
+    <meta name="keywords" content="Taller mecánico Ushuaia, Gomería Ushuaia, Lavado de autos Ushuaia, Cambio de neumáticos, Protex, 24 de marzo 227">
+    <meta name="author" content="Taller El Litoral">
 
     <!-- Verificación de Google -->
     <meta name="google-site-verification" content="kw5fDZx5IdBrdrV4er_JXoM-12oTyxi5rshQ77FC6r4" />
@@ -35,11 +36,13 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.4s ease;
+            height: 100%;
         }
 
         .glass-card:hover {
             border-color: #e11d48;
             background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-5px);
         }
 
         .nav-link { position: relative; padding-bottom: 2px; }
@@ -50,32 +53,46 @@
         }
         .nav-link:hover::after { width: 100%; }
 
-        input, textarea, select {
+        /* Estilos mejorados para el formulario */
+        .form-input {
             background-color: #1a1a1a !important;
             border: 1px solid #333 !important;
-            color: white !important;
+            color: #ffffff !important;
+            border-radius: 4px !important;
+            transition: all 0.3s ease;
         }
-        input:focus, textarea:focus {
+        .form-input:focus {
             border-color: #e11d48 !important;
+            box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.2);
             outline: none;
         }
-        
-        .mp-logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        .form-input::placeholder {
+            color: #666;
         }
 
+        /* Corrección específica para el SELECT */
+        select.form-input {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23e11d48'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5em;
+            padding-right: 2.5rem;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        select.form-input option {
+            background-color: #111;
+            color: white;
+            padding: 10px;
+        }
+        
         .mp-logo {
-            height: 28px;
-            width: auto;
-            filter: grayscale(1) brightness(0.7);
-            transition: all 0.3s ease;
-            object-fit: contain;
+            height: 45px;
+            transition: transform 0.3s ease;
         }
         .mp-logo:hover {
-            filter: grayscale(0) brightness(1);
+            transform: scale(1.1);
         }
 
         .badge-free {
@@ -88,34 +105,53 @@
             text-transform: uppercase;
             border-radius: 2px;
         }
+
+        .float-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+
+        .map-container {
+            filter: grayscale(1) invert(1) contrast(1.2);
+            opacity: 0.8;
+            transition: all 0.5s ease;
+        }
+        .map-container:hover {
+            filter: grayscale(0) invert(0) contrast(1);
+            opacity: 1;
+        }
     </style>
 </head>
-<body class="bg-white text-slate-900">
+<body class="bg-white text-slate-900 overflow-x-hidden">
 
     <!-- Navegación -->
     <nav class="bg-premium-black text-white sticky top-0 z-50 py-5 border-b border-white/10">
         <div class="container mx-auto px-6 flex flex-wrap justify-between items-center">
             <div class="flex flex-col leading-none">
-                <span class="text-2xl font-black tracking-[0.2em]">EL LITORAL</span>
+                <a href="#inicio" class="text-2xl font-black tracking-[0.2em] uppercase">EL LITORAL</a>
                 <span class="text-[10px] tracking-[0.4em] uppercase text-gray-500 mt-1">Ushuaia • Service Center</span>
             </div>
             
-            <div class="hidden lg:flex space-x-8 text-[11px] font-bold uppercase tracking-widest text-gray-400">
+            <div class="hidden lg:flex space-x-6 text-[11px] font-bold uppercase tracking-widest text-gray-400">
                 <a href="#inicio" class="nav-link hover:text-white transition">Inicio</a>
                 <a href="#servicios" class="nav-link hover:text-white transition">Servicios</a>
-                <a href="#pagos" class="nav-link hover:text-white transition">Pagos</a>
+                <a href="#ubicacion" class="nav-link hover:text-white transition">Ubicación</a>
+                <a href="#pagos" class="nav-link hover:text-white transition">Formas de Pago</a>
                 <a href="#contacto" class="nav-link hover:text-white transition">Contacto</a>
             </div>
 
-            <div class="flex items-center space-x-6 mt-4 md:mt-0">
+            <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                <!-- Instagram Usuario Visible -->
                 <a href="https://www.instagram.com/tallerellitoral/" target="_blank" class="flex items-center hover:text-accent transition group">
                     <i class="fab fa-instagram text-xl mr-2"></i>
-                    <span class="text-[11px] font-bold tracking-wider hidden sm:inline">@tallerellitoral</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest hidden sm:inline">@tallerellitoral</span>
                 </a>
-                <a href="https://wa.me/5492901557075?text=Hola!%20Me%20gustaría%20solicitar%20un%20presupuesto%20sin%20cargo." target="_blank" class="flex items-center bg-accent hover:bg-red-700 text-white px-5 py-2 rounded-sm transition">
+                <a href="https://wa.me/5492901557075?text=Hola!%20Vengo%20desde%20la%20web.%20Me%20gustaría%20solicitar%20un%20presupuesto." target="_blank" class="flex items-center bg-accent hover:bg-red-700 text-white px-5 py-2 rounded-sm transition shadow-lg shadow-red-900/20">
                     <i class="fab fa-whatsapp text-lg mr-2"></i>
                     <div class="flex flex-col items-start leading-none">
-                        <span class="text-[9px] font-black uppercase tracking-tighter">Turnos</span>
+                        <span class="text-[9px] font-black uppercase tracking-tighter text-white/80">Turnos</span>
                         <span class="text-[11px] font-bold">2901 557075</span>
                     </div>
                 </a>
@@ -124,106 +160,261 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-luxury h-[80vh] flex items-center px-6 md:px-20">
-        <div class="max-w-3xl">
+    <header id="inicio" class="hero-luxury h-[90vh] flex items-center px-6 md:px-20">
+        <div class="max-w-4xl">
             <h2 class="text-accent font-bold tracking-[0.3em] uppercase mb-4 text-sm flex items-center">
-                Ushuaia, Tierra del Fuego <span class="ml-4 h-[1px] w-12 bg-accent hidden md:block"></span>
+                Mecánica Profesional <span class="ml-4 h-[1px] w-12 bg-accent hidden md:block"></span>
             </h2>
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight uppercase">Ingeniería en el Fin del Mundo.</h1>
-            <p class="text-lg text-gray-400 mb-10 leading-relaxed font-light">
-                Brindamos soluciones integrales de mecánica, estética y protección. <br>
-                <strong class="text-white font-bold uppercase text-sm tracking-widest mt-4 block">Asesoramiento y Presupuesto sin cargo.</strong>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight uppercase">Calidad extrema en el Fin del Mundo.</h1>
+            <p class="text-lg text-gray-400 mb-10 leading-relaxed font-light max-w-2xl">
+                Taller y Gomería El Litoral: Soluciones integrales de mecánica, estética y protección para tu vehículo en el clima más exigente.
             </p>
-            <div class="flex space-x-6">
-                <a href="#contacto" class="bg-white text-black font-bold px-10 py-4 text-xs uppercase tracking-widest hover:bg-accent hover:text-white transition duration-500">
+            <div class="flex flex-wrap gap-4">
+                <a href="#servicios" class="bg-white text-black font-bold px-8 py-4 text-xs uppercase tracking-widest hover:bg-accent hover:text-white transition duration-500">
+                    Nuestros Servicios
+                </a>
+                <a href="#contacto" class="border border-white/30 text-white font-bold px-8 py-4 text-xs uppercase tracking-widest hover:bg-white/10 transition">
                     Solicitar Turno
                 </a>
             </div>
         </div>
-    </section>
+    </header>
 
     <!-- Servicios -->
     <section id="servicios" class="py-24 bg-premium-black text-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <div class="badge-free mb-4 inline-block">Consultas 100% Bonificadas</div>
+                <div class="badge-free mb-4 inline-block">Consultas 100% Sin Costo</div>
                 <h2 class="text-4xl font-bold mb-4 uppercase tracking-tighter">Servicios Especializados</h2>
                 <div class="w-20 h-1 bg-accent mx-auto"></div>
-                <p class="mt-6 text-gray-500 uppercase tracking-widest text-[10px] font-bold">Presupuesto sin cargo en todas nuestras áreas</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Mecánica -->
-                <div class="glass-card p-10 group">
-                    <i class="fas fa-tools text-accent text-4xl mb-8"></i>
+                <article class="glass-card p-10 flex flex-col text-center">
+                    <i class="fas fa-tools text-accent text-4xl mb-6"></i>
                     <h3 class="text-xl font-bold mb-4 uppercase">Mecánica General</h3>
-                    <ul class="text-gray-500 text-sm space-y-2 mb-6">
-                        <li>• Aceite, Filtros y Distribución</li>
-                        <li>• Frenos y Embragues de precisión</li>
-                        <li>• Tren delantero y Suspensión</li>
-                    </ul>
-                    <span class="text-[10px] font-black text-accent uppercase tracking-widest">Presupuesto sin costo</span>
-                </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Mantenimiento preventivo y corrección del vehículo. Lo hacemos para evitar roturas mayores y ahorrar dinero a largo plazo.</p>
+                </article>
+
+                <!-- Arenado y Protex -->
+                <article class="glass-card p-10 flex flex-col text-center">
+                    <i class="fas fa-shield-halved text-accent text-4xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Arenado y Protex</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">El arenado elimina óxido, pintura vieja y suciedad profunda. El Protex protege el metal contra la humedad, sal y corrosión, alargando la vida útil, ideal para zonas frías y húmedas.</p>
+                </article>
 
                 <!-- Gomería -->
-                <div class="glass-card p-10 group">
-                    <i class="fas fa-tire text-accent text-4xl mb-8"></i>
+                <article class="glass-card p-10 flex flex-col text-center">
+                    <i class="fas fa-compact-disc text-accent text-4xl mb-6"></i>
                     <h3 class="text-xl font-bold mb-4 uppercase">Gomería</h3>
-                    <ul class="text-gray-500 text-sm space-y-2 mb-6">
-                        <li>• Cambio estacional (Verano/Clavos)</li>
-                        <li>• Reparación técnica de cubiertas</li>
-                        <li>• Rotación estratégica</li>
-                    </ul>
-                    <span class="text-[10px] font-black text-accent uppercase tracking-widest">Presupuesto sin costo</span>
-                </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">Revisión, reparación y reemplazo de neumáticos. Esto mejora el agarre, el frenado y el consumo de combustible.</p>
+                </article>
 
-                <!-- Lavandería -->
-                <div class="glass-card p-10 group border-accent/30">
-                    <i class="fas fa-faucet-drip text-accent text-4xl mb-8"></i>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Lavado y Lavandería Automotriz</h3>
-                    <ul class="text-gray-500 text-sm space-y-2 mb-6">
-                        <li>• Lavado profundo de chasis</li>
-                        <li>• Limpieza técnica de motor</li>
-                        <li>• Remoción de suciedad extrema</li>
-                    </ul>
-                    <span class="text-[10px] font-black text-accent uppercase tracking-widest">Presupuesto sin costo</span>
-                </div>
+                <!-- Tren Delantero y Trasero -->
+                <article class="glass-card p-10 flex flex-col text-center">
+                    <i class="fas fa-car-side text-accent text-4xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Tren Delantero y Trasero</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Bujes, rótulas, extremos, parrillas y brazos de suspensión para una conducción precisa y segura.</p>
+                </article>
 
-                <!-- Arenado -->
-                <div class="glass-card p-10 group">
-                    <i class="fas fa-wind text-accent text-4xl mb-8"></i>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Arenado</h3>
-                    <ul class="text-gray-500 text-sm space-y-2 mb-6">
-                        <li>• Restauración total de chasis</li>
-                        <li>• Arenado de llantas y piezas</li>
-                        <li>• Tratamiento contra el óxido</li>
-                    </ul>
-                    <span class="text-[10px] font-black text-accent uppercase tracking-widest">Presupuesto sin costo</span>
-                </div>
+                <!-- Frenos -->
+                <article class="glass-card p-10 flex flex-col text-center">
+                    <i class="fas fa-life-ring text-accent text-4xl mb-6"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Frenos</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Servicio integral de pastillas, discos, calipers y cañerías para garantizar tu seguridad en cada frenada.</p>
+                </article>
 
-                <!-- Protex -->
-                <div class="glass-card p-10 group">
-                    <i class="fas fa-shield-alt text-accent text-4xl mb-8"></i>
-                    <h3 class="text-xl font-bold mb-4 uppercase">Protección Protex</h3>
-                    <ul class="text-gray-500 text-sm space-y-2 mb-6">
-                        <li>• Blindaje químico anticorrosivo</li>
-                        <li>• Protección máxima contra el salitre</li>
-                        <li>• Capa protectora insonorizante</li>
-                    </ul>
-                    <span class="text-[10px] font-black text-accent uppercase tracking-widest">Presupuesto sin costo</span>
+                <!-- Amortiguadores -->
+                <article class="glass-card p-10 flex flex-col text-center">
+                    <i class="fas fa-shuttle-space text-accent text-4xl mb-6 rotate-90"></i>
+                    <h3 class="text-xl font-bold mb-4 uppercase">Amortiguadores</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Absorben impactos y mantienen las ruedas pegadas al suelo, optimizando el confort y la estabilidad del vehículo.</p>
+                </article>
+            </div>
+            
+            <!-- Banner Presupuesto -->
+            <div class="mt-12 bg-accent p-10 flex flex-col md:flex-row justify-between items-center text-center md:text-left rounded-sm">
+                <div>
+                    <h3 class="text-2xl font-black uppercase leading-tight text-white">Presupuesto Gratis</h3>
+                    <p class="text-white/80 text-xs font-bold uppercase tracking-widest mt-2">Revisamos tu vehículo sin cargo en 24 horas.</p>
                 </div>
+                <a href="#contacto" class="mt-6 md:mt-0 bg-black text-white px-10 py-4 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition duration-300">Consultar Ahora</a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Presupuesto Box -->
-                <div class="bg-accent p-10 flex flex-col justify-center items-center text-center">
-                    <h3 class="text-2xl font-black mb-4 uppercase leading-tight text-white">¿Necesitás un presupuesto?</h3>
-                    <p class="text-white/80 text-xs mb-6 font-bold tracking-widest uppercase">Evaluamos tu vehículo sin compromiso y sin costo alguno.</p>
-                    <a href="#contacto" class="bg-black text-white px-8 py-3 text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Consultar Ahora</a>
+    <!-- Ubicación -->
+    <section id="ubicacion" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 uppercase tracking-tighter text-premium-black">Nuestra Ubicación</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 font-bold uppercase tracking-widest text-sm">24 de marzo 227 (esquina 1 de Mayo), Ushuaia</p>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden shadow-2xl h-[450px] map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2311.5835261463133!2d-68.3204907233827!3d-54.81156827284451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xbc4c2306f2122b51%3A0xc66974917f698d24!2zMjQgZGUgTWFyem8gJiAxIGRlIE1heW8sIFUzMDAwIFVzaHVhaWEsIFRpZXJyYSBkZWwgRnVlZ28!5e0!3m2!1ses!2sar!4v1715801000000!5m2!1ses!2sar" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Métodos de Pago -->
+    <section id="pagos" class="py-24 bg-gray-50 border-y border-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12 uppercase tracking-tighter text-premium-black">Formas de Pago</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 items-center">
+                <div class="flex flex-col items-center">
+                    <img src="https://logodownload.org/wp-content/uploads/2019/06/mercado-pago-logo-0.png" alt="Mercado Pago" class="mp-logo mb-4 object-contain">
+                    <span class="text-[11px] font-black uppercase tracking-widest">Mercado Pago</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-green-100 flex items-center justify-center rounded-full mb-4">
+                        <i class="fas fa-money-bill-1 text-3xl text-green-600"></i>
+                    </div>
+                    <span class="text-[11px] font-black uppercase tracking-widest">Efectivo</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-blue-100 flex items-center justify-center rounded-full mb-4">
+                        <i class="fas fa-credit-card text-3xl text-blue-600"></i>
+                    </div>
+                    <span class="text-[11px] font-black uppercase tracking-widest">Tarjeta Débito</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-purple-100 flex items-center justify-center rounded-full mb-4">
+                        <i class="fas fa-credit-card text-3xl text-purple-600"></i>
+                    </div>
+                    <span class="text-[11px] font-black uppercase tracking-widest">Tarjeta Crédito</span>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-16 h-16 bg-gray-200 flex items-center justify-center rounded-full mb-4">
+                        <i class="fas fa-building-columns text-3xl text-gray-700"></i>
+                    </div>
+                    <span class="text-[11px] font-black uppercase tracking-widest">Transferencia</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resto del código (pagos, contacto, footer, whatsapp flotante) se mantiene igual -->
-    <!-- Simplemente integra el SEO y los títulos H1/H2 optimizados -->
+    <!-- Contacto -->
+    <section id="contacto" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 uppercase tracking-tighter text-premium-black">Solicitá tu Turno</h2>
+                    <p class="text-gray-600 mb-10 leading-relaxed">Completá los datos de tu vehículo y enviá la consulta directamente a nuestro WhatsApp para una respuesta inmediata.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-accent/10 flex items-center justify-center rounded-full mr-4">
+                                <i class="fas fa-location-dot text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase text-[10px] tracking-widest text-gray-400 mb-1 text-white">Visitanos</h4>
+                                <p class="text-sm font-bold">24 de marzo 227, Ushuaia</p>
+                            </div>
+                        </div>
+                        <!-- Instagram en contacto -->
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-accent/10 flex items-center justify-center rounded-full mr-4">
+                                <i class="fab fa-instagram text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase text-[10px] tracking-widest text-gray-400 mb-1">Instagram</h4>
+                                <a href="https://www.instagram.com/tallerellitoral/" target="_blank" class="text-sm font-black text-premium-black hover:text-accent transition">@tallerellitoral</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-accent/10 flex items-center justify-center rounded-full mr-4">
+                                <i class="fab fa-whatsapp text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold uppercase text-[10px] tracking-widest text-gray-400 mb-1">WhatsApp</h4>
+                                <p class="text-sm font-bold">2901 557075</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-premium-black p-8 rounded-lg shadow-2xl">
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" id="nombre" placeholder="Nombre" class="form-input w-full p-4 text-sm" required>
+                            <input type="text" id="apellido" placeholder="Apellido" class="form-input w-full p-4 text-sm" required>
+                        </div>
+                        <input type="text" id="vehiculo" placeholder="Vehículo (Ej: Ford Ranger)" class="form-input w-full p-4 text-sm" required>
+                        
+                        <!-- Selector de Servicio Mejorado y Colorido -->
+                        <div class="relative">
+                            <select id="servicio" class="form-input w-full p-4 text-sm font-bold">
+                                <option value="" disabled selected class="text-gray-500">¿Qué servicio necesitas?</option>
+                                <option value="Mecánica General" class="text-white">🛠️ MECÁNICA GENERAL</option>
+                                <option value="Arenado y Protex" class="text-white">🛡️ ARENADO Y PROTEX</option>
+                                <option value="Gomería" class="text-white">⭕ GOMERÍA</option>
+                                <option value="Tren Delantero/Trasero" class="text-white">⚙️ TREN DELANTERO / TRASERO</option>
+                                <option value="Frenos" class="text-white">🛑 FRENOS</option>
+                                <option value="Amortiguadores" class="text-white">⬆️ AMORTIGUADORES</option>
+                            </select>
+                        </div>
+                        
+                        <textarea id="mensaje" placeholder="Describe brevemente el problema o servicio..." rows="4" class="form-input w-full p-4 text-sm" required></textarea>
+                        
+                        <button onclick="enviarWhatsApp()" class="w-full bg-accent hover:bg-red-700 text-white font-bold py-4 uppercase tracking-[0.2em] text-xs transition flex items-center justify-center shadow-lg shadow-red-900/40">
+                            <i class="fab fa-whatsapp mr-2 text-lg"></i> Enviar a WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-premium-black text-white py-12 border-t border-white/5">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex flex-col items-center mb-8">
+                <span class="text-xl font-black tracking-[0.2em] uppercase">EL LITORAL</span>
+                <span class="text-[9px] tracking-[0.3em] uppercase text-gray-600">24 de marzo 227 • Ushuaia</span>
+                <a href="https://www.instagram.com/tallerellitoral/" target="_blank" class="mt-4 text-[11px] font-bold text-gray-500 hover:text-white transition">INSTAGRAM: @TALLERELLITORAL</a>
+            </div>
+            <p class="text-gray-700 text-[9px] uppercase tracking-[0.4em]">
+                &copy; 2024 Taller y Gomería El Litoral. Ushuaia, Argentina.
+            </p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flotante -->
+    <a href="https://wa.me/5492901557075" target="_blank" class="float-whatsapp bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        function enviarWhatsApp() {
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const vehiculo = document.getElementById('vehiculo').value;
+            const servicio = document.getElementById('servicio').value;
+            const mensaje = document.getElementById('mensaje').value;
+
+            if(!nombre || !apellido || !vehiculo || !servicio) {
+                alert("Por favor, completa los campos: Nombre, Apellido, Vehículo y Servicio.");
+                return;
+            }
+
+            const numeroTel = "5492901557075";
+            const texto = `Hola El Litoral! 👋%0A%0A` +
+                          `*Nueva solicitud de turno desde la web*%0A` +
+                          `-----------------------------------%0A` +
+                          `*Cliente:* ${nombre} ${apellido}%0A` +
+                          `*Vehículo:* ${vehiculo}%0A` +
+                          `*Servicio:* ${servicio}%0A` +
+                          `*Mensaje:* ${mensaje}`;
+
+            window.open(`https://wa.me/${numeroTel}?text=${texto}`, '_blank');
+        }
+    </script>
+
 </body>
 </html>
